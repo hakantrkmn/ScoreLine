@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AD451FDB804A2743F1A8C7B /* Pods_ScoreLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88EE32A4826CAF02073E12CC /* Pods_ScoreLine.framework */; };
+		2612E2917A8112B413259124 /* Pods_ScoreLineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2D48CB417A478FD985F301 /* Pods_ScoreLineTests.framework */; };
+		A3613DEBA49278BA79EF1C47 /* Pods_ScoreLine_ScoreLineUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDCC45C53987DA8ADAB1C72 /* Pods_ScoreLine_ScoreLineUITests.framework */; };
 		C012D0BE2B7F6F0700F40B0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C012D0BD2B7F6F0700F40B0E /* AppDelegate.swift */; };
 		C012D0C02B7F6F0700F40B0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C012D0BF2B7F6F0700F40B0E /* SceneDelegate.swift */; };
 		C012D0C22B7F6F0700F40B0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C012D0C12B7F6F0700F40B0E /* ViewController.swift */; };
@@ -36,6 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E2D48CB417A478FD985F301 /* Pods_ScoreLineTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScoreLineTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EDCC45C53987DA8ADAB1C72 /* Pods_ScoreLine_ScoreLineUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScoreLine_ScoreLineUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		503501384DCCC8A8FBDBB764 /* Pods-ScoreLineTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreLineTests.debug.xcconfig"; path = "Target Support Files/Pods-ScoreLineTests/Pods-ScoreLineTests.debug.xcconfig"; sourceTree = "<group>"; };
+		79D330A2F8BE646E845097D6 /* Pods-ScoreLine-ScoreLineUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreLine-ScoreLineUITests.debug.xcconfig"; path = "Target Support Files/Pods-ScoreLine-ScoreLineUITests/Pods-ScoreLine-ScoreLineUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		88EE32A4826CAF02073E12CC /* Pods_ScoreLine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScoreLine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB397B28F9FAE45F5A639C16 /* Pods-ScoreLineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreLineTests.release.xcconfig"; path = "Target Support Files/Pods-ScoreLineTests/Pods-ScoreLineTests.release.xcconfig"; sourceTree = "<group>"; };
 		C012D0BA2B7F6F0700F40B0E /* ScoreLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C012D0BD2B7F6F0700F40B0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C012D0BF2B7F6F0700F40B0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +58,9 @@
 		C012D0DA2B7F6F0900F40B0E /* ScoreLineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoreLineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C012D0DE2B7F6F0900F40B0E /* ScoreLineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLineUITests.swift; sourceTree = "<group>"; };
 		C012D0E02B7F6F0900F40B0E /* ScoreLineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLineUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C9CFDC81DF1A53EDCB6FAACB /* Pods-ScoreLine-ScoreLineUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreLine-ScoreLineUITests.release.xcconfig"; path = "Target Support Files/Pods-ScoreLine-ScoreLineUITests/Pods-ScoreLine-ScoreLineUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CE777C08908BAB3874C24EAD /* Pods-ScoreLine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreLine.debug.xcconfig"; path = "Target Support Files/Pods-ScoreLine/Pods-ScoreLine.debug.xcconfig"; sourceTree = "<group>"; };
+		EEEE1A3AD6F20111E9702548 /* Pods-ScoreLine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreLine.release.xcconfig"; path = "Target Support Files/Pods-ScoreLine/Pods-ScoreLine.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AD451FDB804A2743F1A8C7B /* Pods_ScoreLine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2612E2917A8112B413259124 /* Pods_ScoreLineTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3613DEBA49278BA79EF1C47 /* Pods_ScoreLine_ScoreLineUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47F868880AEDE06BC012D140 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE777C08908BAB3874C24EAD /* Pods-ScoreLine.debug.xcconfig */,
+				EEEE1A3AD6F20111E9702548 /* Pods-ScoreLine.release.xcconfig */,
+				79D330A2F8BE646E845097D6 /* Pods-ScoreLine-ScoreLineUITests.debug.xcconfig */,
+				C9CFDC81DF1A53EDCB6FAACB /* Pods-ScoreLine-ScoreLineUITests.release.xcconfig */,
+				503501384DCCC8A8FBDBB764 /* Pods-ScoreLineTests.debug.xcconfig */,
+				AB397B28F9FAE45F5A639C16 /* Pods-ScoreLineTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C012D0B12B7F6F0700F40B0E = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +112,8 @@
 				C012D0D32B7F6F0900F40B0E /* ScoreLineTests */,
 				C012D0DD2B7F6F0900F40B0E /* ScoreLineUITests */,
 				C012D0BB2B7F6F0700F40B0E /* Products */,
+				47F868880AEDE06BC012D140 /* Pods */,
+				F690C937DC20B3A5A21875BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +158,16 @@
 			path = ScoreLineUITests;
 			sourceTree = "<group>";
 		};
+		F690C937DC20B3A5A21875BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88EE32A4826CAF02073E12CC /* Pods_ScoreLine.framework */,
+				3EDCC45C53987DA8ADAB1C72 /* Pods_ScoreLine_ScoreLineUITests.framework */,
+				2E2D48CB417A478FD985F301 /* Pods_ScoreLineTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C012D0E42B7F6F0900F40B0E /* Build configuration list for PBXNativeTarget "ScoreLine" */;
 			buildPhases = (
+				48B293E181367D40E4A65B86 /* [CP] Check Pods Manifest.lock */,
 				C012D0B62B7F6F0700F40B0E /* Sources */,
 				C012D0B72B7F6F0700F40B0E /* Frameworks */,
 				C012D0B82B7F6F0700F40B0E /* Resources */,
+				FF9DE84ADFC22550BB8C58CA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C012D0E72B7F6F0900F40B0E /* Build configuration list for PBXNativeTarget "ScoreLineTests" */;
 			buildPhases = (
+				28018D3FA49BE413D78FBFD6 /* [CP] Check Pods Manifest.lock */,
 				C012D0CC2B7F6F0900F40B0E /* Sources */,
 				C012D0CD2B7F6F0900F40B0E /* Frameworks */,
 				C012D0CE2B7F6F0900F40B0E /* Resources */,
@@ -169,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C012D0EA2B7F6F0900F40B0E /* Build configuration list for PBXNativeTarget "ScoreLineUITests" */;
 			buildPhases = (
+				2FAF6C0CDBA7AA4EA4700817 /* [CP] Check Pods Manifest.lock */,
 				C012D0D62B7F6F0900F40B0E /* Sources */,
 				C012D0D72B7F6F0900F40B0E /* Frameworks */,
 				C012D0D82B7F6F0900F40B0E /* Resources */,
+				FEF4A4241CF617316A374D5E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +298,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28018D3FA49BE413D78FBFD6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScoreLineTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FAF6C0CDBA7AA4EA4700817 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScoreLine-ScoreLineUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48B293E181367D40E4A65B86 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScoreLine-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEF4A4241CF617316A374D5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScoreLine-ScoreLineUITests/Pods-ScoreLine-ScoreLineUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScoreLine-ScoreLineUITests/Pods-ScoreLine-ScoreLineUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScoreLine-ScoreLineUITests/Pods-ScoreLine-ScoreLineUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF9DE84ADFC22550BB8C58CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScoreLine/Pods-ScoreLine-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScoreLine/Pods-ScoreLine-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScoreLine/Pods-ScoreLine-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C012D0B62B7F6F0700F40B0E /* Sources */ = {
@@ -437,6 +586,7 @@
 		};
 		C012D0E52B7F6F0900F40B0E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE777C08908BAB3874C24EAD /* Pods-ScoreLine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -465,6 +615,7 @@
 		};
 		C012D0E62B7F6F0900F40B0E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEEE1A3AD6F20111E9702548 /* Pods-ScoreLine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -493,6 +644,7 @@
 		};
 		C012D0E82B7F6F0900F40B0E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 503501384DCCC8A8FBDBB764 /* Pods-ScoreLineTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -513,6 +665,7 @@
 		};
 		C012D0E92B7F6F0900F40B0E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB397B28F9FAE45F5A639C16 /* Pods-ScoreLineTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -533,6 +686,7 @@
 		};
 		C012D0EB2B7F6F0900F40B0E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79D330A2F8BE646E845097D6 /* Pods-ScoreLine-ScoreLineUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -551,6 +705,7 @@
 		};
 		C012D0EC2B7F6F0900F40B0E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9CFDC81DF1A53EDCB6FAACB /* Pods-ScoreLine-ScoreLineUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
