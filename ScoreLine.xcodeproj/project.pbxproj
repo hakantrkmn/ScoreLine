@@ -19,6 +19,8 @@
 		C012D0D52B7F6F0900F40B0E /* ScoreLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C012D0D42B7F6F0900F40B0E /* ScoreLineTests.swift */; };
 		C012D0DF2B7F6F0900F40B0E /* ScoreLineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C012D0DE2B7F6F0900F40B0E /* ScoreLineUITests.swift */; };
 		C012D0E12B7F6F0900F40B0E /* ScoreLineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C012D0E02B7F6F0900F40B0E /* ScoreLineUITestsLaunchTests.swift */; };
+		C012D0EF2B7F78EE00F40B0E /* StartupScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C012D0EE2B7F78EE00F40B0E /* StartupScreenCell.swift */; };
+		C012D0F12B7F794D00F40B0E /* StartupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C012D0F02B7F794D00F40B0E /* StartupController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		C012D0DA2B7F6F0900F40B0E /* ScoreLineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoreLineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C012D0DE2B7F6F0900F40B0E /* ScoreLineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLineUITests.swift; sourceTree = "<group>"; };
 		C012D0E02B7F6F0900F40B0E /* ScoreLineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLineUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C012D0EE2B7F78EE00F40B0E /* StartupScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupScreenCell.swift; sourceTree = "<group>"; };
+		C012D0F02B7F794D00F40B0E /* StartupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupController.swift; sourceTree = "<group>"; };
 		C9CFDC81DF1A53EDCB6FAACB /* Pods-ScoreLine-ScoreLineUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreLine-ScoreLineUITests.release.xcconfig"; path = "Target Support Files/Pods-ScoreLine-ScoreLineUITests/Pods-ScoreLine-ScoreLineUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CE777C08908BAB3874C24EAD /* Pods-ScoreLine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreLine.debug.xcconfig"; path = "Target Support Files/Pods-ScoreLine/Pods-ScoreLine.debug.xcconfig"; sourceTree = "<group>"; };
 		EEEE1A3AD6F20111E9702548 /* Pods-ScoreLine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreLine.release.xcconfig"; path = "Target Support Files/Pods-ScoreLine/Pods-ScoreLine.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,7 +105,6 @@
 				503501384DCCC8A8FBDBB764 /* Pods-ScoreLineTests.debug.xcconfig */,
 				AB397B28F9FAE45F5A639C16 /* Pods-ScoreLineTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -130,6 +133,7 @@
 		C012D0BC2B7F6F0700F40B0E /* ScoreLine */ = {
 			isa = PBXGroup;
 			children = (
+				C012D0ED2B7F78D100F40B0E /* Views */,
 				C012D0BD2B7F6F0700F40B0E /* AppDelegate.swift */,
 				C012D0BF2B7F6F0700F40B0E /* SceneDelegate.swift */,
 				C012D0C12B7F6F0700F40B0E /* ViewController.swift */,
@@ -137,6 +141,7 @@
 				C012D0C62B7F6F0800F40B0E /* Assets.xcassets */,
 				C012D0C82B7F6F0800F40B0E /* LaunchScreen.storyboard */,
 				C012D0CB2B7F6F0800F40B0E /* Info.plist */,
+				C012D0F02B7F794D00F40B0E /* StartupController.swift */,
 			);
 			path = ScoreLine;
 			sourceTree = "<group>";
@@ -156,6 +161,14 @@
 				C012D0E02B7F6F0900F40B0E /* ScoreLineUITestsLaunchTests.swift */,
 			);
 			path = ScoreLineUITests;
+			sourceTree = "<group>";
+		};
+		C012D0ED2B7F78D100F40B0E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C012D0EE2B7F78EE00F40B0E /* StartupScreenCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		F690C937DC20B3A5A21875BC /* Frameworks */ = {
@@ -408,6 +421,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C012D0C22B7F6F0700F40B0E /* ViewController.swift in Sources */,
+				C012D0F12B7F794D00F40B0E /* StartupController.swift in Sources */,
+				C012D0EF2B7F78EE00F40B0E /* StartupScreenCell.swift in Sources */,
 				C012D0BE2B7F6F0700F40B0E /* AppDelegate.swift in Sources */,
 				C012D0C02B7F6F0700F40B0E /* SceneDelegate.swift in Sources */,
 			);
@@ -502,7 +517,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -565,7 +580,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
