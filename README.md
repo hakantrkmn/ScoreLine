@@ -6,7 +6,6 @@ ScoreLine is your go-to solution for staying up-to-date with football scores fro
 
 - Real-time updates: Never miss a goal, touchdown, or final whistle with instant updates.
 - Comprehensive coverage: Get detailed information on matches, including live scores, match statistics, team lineups, and more.
-- Personalized notifications: Stay ahead of the game with customized notifications for your favorite teams and leagues.
 - Wide coverage: Whether it's the English Premier League, La Liga, Serie A, Bundesliga, MLS, or international tournaments like the World Cup, ScoreLine has you covered.
 - Easy to use: User-friendly interface makes navigating through matches and scores a breeze.
 
