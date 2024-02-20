@@ -32,7 +32,7 @@ class StartupController: UIViewController,UICollectionViewDelegate,UICollectionV
             pageControl.currentPage = Int(offSet + horizontalCenter) / Int(width)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return startupImageArr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
