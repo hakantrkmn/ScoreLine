@@ -73,6 +73,7 @@ class StartupController: UIViewController,UICollectionViewDelegate,UICollectionV
     @objc func btnGetStarted(){
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeStory") as! HomeVC
         let nav = UINavigationController(rootViewController: vc)
+        UserDefaults.standard.set(true, forKey: "firstTime")
         UIApplication.shared.windows.first?.rootViewController = nav
     }
     @IBAction func pageAction(_ sender: UIPageControl) {

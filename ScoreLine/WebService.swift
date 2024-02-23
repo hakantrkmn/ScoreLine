@@ -88,7 +88,7 @@ func readLocalJSONFileIntoDictionary(forName name: String,
 func CallService<T: Codable>( Model_Name    : T.Type,
                                 URLstr      : String,
                                 method      : String = HTTPMethodName.POST.rawValue,
-                                parameters  : Parameters? = nil,
+                              parameters    : Alamofire.Parameters? = nil,
                                 encoding    : ParameterEncoding = JSONEncoding.default,
                                 headers     : HTTPHeaders? = headers,
                                 hideProgress: Bool? = false,
@@ -164,7 +164,7 @@ func CallService<T: Codable>( Model_Name    : T.Type,
 func CallWebServiceWithToken<T: Codable>( Model_Name    : T.Type,
                                 URLstr      : String,
                                 method      : String = HTTPMethodName.POST.rawValue,
-                                parameters  : Parameters? = nil,
+                                parameters  : Alamofire.Parameters? = nil,
                                 encoding    : ParameterEncoding = JSONEncoding.default,
                                 headers     : HTTPHeaders? = headers,
                                 hideProgress: Bool? = false,
@@ -244,7 +244,7 @@ func CallWebServiceWithToken<T: Codable>( Model_Name    : T.Type,
     }
     
 }
-fileprivate func PrintRequstJson(strURL: String,  parameters: Parameters?) {
+fileprivate func PrintRequstJson(strURL: String,  parameters: Alamofire.Parameters?) {
     print("\n\n------------Request URL ------------\n", strURL);
     if let param = parameters {
         var JsonData: Data? = nil
@@ -265,7 +265,7 @@ fileprivate func PrintRequstJson(strURL: String,  parameters: Parameters?) {
 
 func callWebServiceToFetchJsonData(strURL       : String,
                                method       : String = HTTPMethodName.POST.rawValue,
-                               parameters   : Parameters? = nil,
+                               parameters   : Alamofire.Parameters? = nil,
                                encodeing    : ParameterEncoding =  URLEncoding.default,
                                headers      : HTTPHeaders? = headers,
                                hideProgress : Bool? = false,
@@ -331,41 +331,41 @@ func callWebServiceToFetchJsonData(strURL       : String,
 
 func showAlertController(_ title: String? = "", message msg: String?, forCancel cancelString: String? = "Cancel", forOther otherString: String?, isSingle isSingleButton:Bool=false, textAlignment alignment: NSTextAlignment = .left, alertImage image: String? = "eraser.fill",backColor color:UIColor? = .ecom_background,otherButtonColor otherColor: UIColor? = .ecom_buttonColor,cancelButtonColor cancelColor: UIColor? = .red,completionHandler: @escaping (_ btnString: String?) -> Void) {
     
-    let Story = UIStoryboard(name: "Main", bundle: nil)
-    let myVC = Story.instantiateViewController(withIdentifier: "AlertStory") as? AlertVC
-    myVC?.providesPresentationContextTransitionStyle = true
-    myVC?.definesPresentationContext = true
-    myVC?.stralerttitle = title ?? ""
-    myVC?.stralertmsg = msg ?? ""
-    myVC?.btncanceltitle = cancelString ?? "Cancel"
-    myVC?.btnothertitle = otherString ?? "OK"
-    myVC?.isSingleBtn = isSingleButton
-    myVC?.textAlignment = alignment
-    myVC?.image = image ?? "eraser.fill"
-    myVC?.backgroundColor = color ?? .ecom_background!
-    myVC?.otherButtonColor = otherColor ?? .ecom_buttonColor!
-    myVC?.cancelButtonColor = cancelColor ?? .red
-    myVC?.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
-
-    if let myVC = myVC {
-        let vw = UIApplication
-            .shared
-            .connectedScenes
-            .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
-            .first { $0.isKeyWindow }
-
-        vw?.rootViewController?.present(myVC, animated: true)
-
-        myVC.onCompletionClose = {
-            vw?.rootViewController?.dismiss(animated: true) {}
-        }
-
-        myVC.onCompletionDone = {
-            vw?.rootViewController?.dismiss(animated: true){
-
-            }
-        }
-    }
+//    let Story = UIStoryboard(name: "Main", bundle: nil)
+//    let myVC = Story.instantiateViewController(withIdentifier: "AlertStory") as? AlertVC
+//    myVC?.providesPresentationContextTransitionStyle = true
+//    myVC?.definesPresentationContext = true
+//    myVC?.stralerttitle = title ?? ""
+//    myVC?.stralertmsg = msg ?? ""
+//    myVC?.btncanceltitle = cancelString ?? "Cancel"
+//    myVC?.btnothertitle = otherString ?? "OK"
+//    myVC?.isSingleBtn = isSingleButton
+//    myVC?.textAlignment = alignment
+//    myVC?.image = image ?? "eraser.fill"
+//    myVC?.backgroundColor = color ?? .ecom_background!
+//    myVC?.otherButtonColor = otherColor ?? .ecom_buttonColor!
+//    myVC?.cancelButtonColor = cancelColor ?? .red
+//    myVC?.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+//
+//    if let myVC = myVC {
+//        let vw = UIApplication
+//            .shared
+//            .connectedScenes
+//            .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
+//            .first { $0.isKeyWindow }
+//
+//        vw?.rootViewController?.present(myVC, animated: true)
+//
+//        myVC.onCompletionClose = {
+//            vw?.rootViewController?.dismiss(animated: true) {}
+//        }
+//
+//        myVC.onCompletionDone = {
+//            vw?.rootViewController?.dismiss(animated: true){
+//
+//            }
+//        }
+//    }
 }
 
 class WebService :UIViewController {
@@ -382,7 +382,7 @@ class WebService :UIViewController {
 //    func LoadDataSimple
     func LoadServerDataPost<T: Codable>(ModelName   : T.Type,
                                         URLstr      : String,
-                                        parameters  : Parameters? = nil,
+                                        parameters  : Alamofire.Parameters? = nil,
                                         encoding    : ParameterEncoding = JSONEncoding.default,
                                         headers     : HTTPHeaders? = headers,
                                         OnSucess    :@escaping(T) ->Void,
