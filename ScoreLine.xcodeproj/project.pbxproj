@@ -10,6 +10,14 @@
 		1AD451FDB804A2743F1A8C7B /* Pods_ScoreLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88EE32A4826CAF02073E12CC /* Pods_ScoreLine.framework */; };
 		2612E2917A8112B413259124 /* Pods_ScoreLineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2D48CB417A478FD985F301 /* Pods_ScoreLineTests.framework */; };
 		A3613DEBA49278BA79EF1C47 /* Pods_ScoreLine_ScoreLineUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDCC45C53987DA8ADAB1C72 /* Pods_ScoreLine_ScoreLineUITests.framework */; };
+		C005C9DB2B8882220064987B /* ListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C005C9D32B8882220064987B /* ListTableVC.swift */; };
+		C005C9DC2B8882220064987B /* API_URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C005C9D42B8882220064987B /* API_URL.swift */; };
+		C005C9DD2B8882220064987B /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C005C9D52B8882220064987B /* AlertVC.swift */; };
+		C005C9DE2B8882220064987B /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C005C9D62B8882220064987B /* WebService.swift */; };
+		C005C9DF2B8882220064987B /* HelperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C005C9D72B8882220064987B /* HelperClass.swift */; };
+		C005C9E02B8882220064987B /* DatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C005C9D82B8882220064987B /* DatePickerVC.swift */; };
+		C005C9E12B8882220064987B /* LocalStateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C005C9D92B8882220064987B /* LocalStateCheck.swift */; };
+		C005C9E22B8882220064987B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C005C9DA2B8882220064987B /* Settings.swift */; };
 		C012D0BE2B7F6F0700F40B0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C012D0BD2B7F6F0700F40B0E /* AppDelegate.swift */; };
 		C012D0C02B7F6F0700F40B0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C012D0BF2B7F6F0700F40B0E /* SceneDelegate.swift */; };
 		C012D0C22B7F6F0700F40B0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C012D0C12B7F6F0700F40B0E /* ViewController.swift */; };
@@ -48,6 +56,14 @@
 		79D330A2F8BE646E845097D6 /* Pods-ScoreLine-ScoreLineUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreLine-ScoreLineUITests.debug.xcconfig"; path = "Target Support Files/Pods-ScoreLine-ScoreLineUITests/Pods-ScoreLine-ScoreLineUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		88EE32A4826CAF02073E12CC /* Pods_ScoreLine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScoreLine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB397B28F9FAE45F5A639C16 /* Pods-ScoreLineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreLineTests.release.xcconfig"; path = "Target Support Files/Pods-ScoreLineTests/Pods-ScoreLineTests.release.xcconfig"; sourceTree = "<group>"; };
+		C005C9D32B8882220064987B /* ListTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableVC.swift; sourceTree = "<group>"; };
+		C005C9D42B8882220064987B /* API_URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_URL.swift; sourceTree = "<group>"; };
+		C005C9D52B8882220064987B /* AlertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
+		C005C9D62B8882220064987B /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		C005C9D72B8882220064987B /* HelperClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperClass.swift; sourceTree = "<group>"; };
+		C005C9D82B8882220064987B /* DatePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerVC.swift; sourceTree = "<group>"; };
+		C005C9D92B8882220064987B /* LocalStateCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStateCheck.swift; sourceTree = "<group>"; };
+		C005C9DA2B8882220064987B /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		C012D0BA2B7F6F0700F40B0E /* ScoreLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C012D0BD2B7F6F0700F40B0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C012D0BF2B7F6F0700F40B0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +202,14 @@
 		C0C9DFEE2B87C3DB001E10B4 /* WebService and Imp Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C005C9D52B8882220064987B /* AlertVC.swift */,
+				C005C9D42B8882220064987B /* API_URL.swift */,
+				C005C9D82B8882220064987B /* DatePickerVC.swift */,
+				C005C9D72B8882220064987B /* HelperClass.swift */,
+				C005C9D32B8882220064987B /* ListTableVC.swift */,
+				C005C9D92B8882220064987B /* LocalStateCheck.swift */,
+				C005C9DA2B8882220064987B /* Settings.swift */,
+				C005C9D62B8882220064987B /* WebService.swift */,
 			);
 			name = "WebService and Imp Classes";
 			sourceTree = "<group>";
@@ -441,9 +465,17 @@
 			files = (
 				C012D0C22B7F6F0700F40B0E /* ViewController.swift in Sources */,
 				C012D0F12B7F794D00F40B0E /* StartupController.swift in Sources */,
+				C005C9E12B8882220064987B /* LocalStateCheck.swift in Sources */,
 				C012D0EF2B7F78EE00F40B0E /* StartupScreenCell.swift in Sources */,
+				C005C9E22B8882220064987B /* Settings.swift in Sources */,
+				C005C9DD2B8882220064987B /* AlertVC.swift in Sources */,
 				C0C9DFED2B87C3C8001E10B4 /* HomeVC.swift in Sources */,
+				C005C9DC2B8882220064987B /* API_URL.swift in Sources */,
+				C005C9DF2B8882220064987B /* HelperClass.swift in Sources */,
+				C005C9DB2B8882220064987B /* ListTableVC.swift in Sources */,
 				C012D0BE2B7F6F0700F40B0E /* AppDelegate.swift in Sources */,
+				C005C9DE2B8882220064987B /* WebService.swift in Sources */,
+				C005C9E02B8882220064987B /* DatePickerVC.swift in Sources */,
 				C012D0C02B7F6F0700F40B0E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

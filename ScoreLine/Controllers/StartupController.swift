@@ -14,7 +14,7 @@ class StartupController: UIViewController,UICollectionViewDelegate,UICollectionV
     
     //MARK: Variables
     var startupImageArr = ["CR7","LM10","NS11"]
-    var startupTextArr = ["Welcome to Football Fever! Where every kick, every goal, and every victory matters.", "Stay tuned for the latest scores, highlights, and news from the world of football.","Let's kick off the excitement together!"]
+    var startupTextArr = ["Welcome to ScoreLine! Where every kick, every goal, and every victory matters.", "Stay tuned for the latest scores, highlights, and news from the world of football.","Let's kick off the excitement together!"]
     
     //MARK: View Controller Lifecycle
     override func viewDidLoad() {
@@ -58,7 +58,7 @@ class StartupController: UIViewController,UICollectionViewDelegate,UICollectionV
             cell.lblSwipeText.isHidden = false
         }
         cell.lblStartupText.text = startupTextArr[indexPath.row]
-        
+        cell.btnGetStarted.addTarget(self, action: #selector(btnGetStarted), for: .touchUpInside)
         return cell
         
     }
@@ -69,7 +69,12 @@ class StartupController: UIViewController,UICollectionViewDelegate,UICollectionV
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-
+    //MARK: BTN Actions
+    @objc func btnGetStarted(){
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeStory") as! HomeVC
+        let nav = UINavigationController(rootViewController: vc)
+        UIApplication.shared.windows.first?.rootViewController = nav
+    }
     @IBAction func pageAction(_ sender: UIPageControl) {
         let page: Int? = sender.currentPage
             var frame: CGRect = self.clcStartupImages.frame

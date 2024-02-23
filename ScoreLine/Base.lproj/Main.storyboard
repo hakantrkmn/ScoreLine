@@ -158,7 +158,7 @@
         <!--HomeVC-->
         <scene sceneID="6Pj-zS-wcW">
             <objects>
-                <viewController id="FAE-FI-46M" customClass="HomeVC" customModule="ScoreLine" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeStory" id="FAE-FI-46M" customClass="HomeVC" customModule="ScoreLine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UyP-Ib-d5z">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
