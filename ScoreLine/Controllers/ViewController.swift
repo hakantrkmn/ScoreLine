@@ -18,7 +18,7 @@ class ViewController: UIViewController {
             UIApplication.shared.windows.first?.rootViewController = vc
         }
         else{
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeStory") as! HomeVC
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabBarStory") as! TabBarController
             let nav = UINavigationController(rootViewController: vc)
             UIApplication.shared.windows.first?.rootViewController = nav
         }

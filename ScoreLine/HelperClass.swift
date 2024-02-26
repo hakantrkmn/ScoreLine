@@ -1032,7 +1032,7 @@ extension UIView {
    
     func viewShadow(){
         self.layer.cornerRadius = 10
-        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowColor = UIColor.gray.cgColor
         self.layer.shadowOpacity = 0.5
         self.layer.shadowRadius = 5
         self.layer.shadowOffset = CGSize.zero

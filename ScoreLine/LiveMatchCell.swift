@@ -16,6 +16,7 @@ class LiveMatchCell: UICollectionViewCell {
     @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var lblVenue: UILabel!
     
+    @IBOutlet weak var viewBack: UIView!
     @IBOutlet weak var lblHomeName: UILabel!
     @IBOutlet weak var lblAwayName: UILabel!
 }
