@@ -19,7 +19,7 @@ class StartupController: UIViewController,UICollectionViewDelegate,UICollectionV
     //MARK: View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         pageControl.numberOfPages = 3
         pageControl.currentPage = 0
         pageControl.setCurrentPageIndicatorImage(UIImage(named: "football"), forPage: 0)

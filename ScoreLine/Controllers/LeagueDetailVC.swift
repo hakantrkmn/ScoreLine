@@ -14,6 +14,7 @@ class LeagueDetailVC: UIViewController,UICollectionViewDelegate,UICollectionView
     @IBOutlet weak var lblLeagueName: UILabel!
     @IBOutlet weak var clcTeams: UICollectionView!
     
+    @IBOutlet weak var viewTop: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var imgTop: UIImageView!
     
@@ -25,19 +26,30 @@ class LeagueDetailVC: UIViewController,UICollectionViewDelegate,UICollectionView
     //MARK: Viewcontroller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         imgTop.clipsToBounds = true
         imgTop.layer.cornerRadius = 20
         imgTop.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         imgTop.sd_setImage(with: URL(string: leagueData["logo"] as? String ?? ""))
         lblLeagueName.text = "\(leagueData["name"] as? String ?? "") teams"
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.prominent)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = viewTop.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurEffectView.layer.masksToBounds = true
+        blurEffectView.layer.cornerRadius = 20
+        viewTop.insertSubview(blurEffectView, at: 0)
+        viewTop.clipsToBounds = true
+        viewTop.layer.cornerRadius = 20
+        viewTop.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         getTeamData()
         // Do any additional setup after loading the view.
     }
     //MARK: Webservice methods
     func getTeamData(){
-        let teamDataUrl = "https://v3.football.api-sports.io/teams?league=\(leagueId)&season=\(Calendar.current.component(.year, from: Calendar.current.date(byAdding: .year, value: -1, to: Date.init()) ?? Date()))"
-        let headers:HTTPHeaders = ["x-rapidapi-key" : "ef202dc7c88478fd5250d7c20a7d5f7c",
-                                   "x-rapidapi-host" : "v3.football.api-sports.io"]
+        let teamDataUrl = "https://\(apiHost)/teams?league=\(leagueId)&season=\(Calendar.current.component(.year, from: Calendar.current.date(byAdding: .year, value: -1, to: Date.init()) ?? Date()))"
+        let headers:HTTPHeaders = ["x-rapidapi-key" : api_key,
+                                   "x-rapidapi-host" : apiHost]
         callWebServiceToFetchJsonData(strURL: teamDataUrl, headers: headers){[self]response in
             teamData = response?["response"] as? [AnyObject] ?? []
             filteredTeamData = teamData

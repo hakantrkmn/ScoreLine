@@ -13,6 +13,7 @@ class LeagueVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSo
     //MARK: Outlets
     @IBOutlet weak var clcLeagues: UICollectionView!
     
+    @IBOutlet weak var viewTop: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var imgTop: UIImageView!
     //MARK: Variables
@@ -20,18 +21,28 @@ class LeagueVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSo
     var filteredLeagues = [AnyObject]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         imgTop.clipsToBounds = true
         imgTop.layer.cornerRadius = 20
         imgTop.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-       
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.prominent)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = viewTop.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurEffectView.layer.masksToBounds = true
+        blurEffectView.layer.cornerRadius = 20
+        viewTop.insertSubview(blurEffectView, at: 0)
+        viewTop.clipsToBounds = true
+        viewTop.layer.cornerRadius = 20
+        viewTop.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         getLeagues()
         // Do any additional setup after loading the view.
     }
     //MARK: Webservice methods
     func getLeagues(){
-        let getLeagueUrl = "https://v3.football.api-sports.io/leagues"
-        let headers:HTTPHeaders = ["x-rapidapi-key" : "ef202dc7c88478fd5250d7c20a7d5f7c",
-                                   "x-rapidapi-host" : "v3.football.api-sports.io"]
+        let getLeagueUrl = "https://\(apiHost)/leagues"
+        let headers:HTTPHeaders = ["x-rapidapi-key" : api_key,
+                                   "x-rapidapi-host" : apiHost]
         callWebServiceToFetchJsonData(strURL: getLeagueUrl, headers: headers){[self]response in
             leagueArr = response?["response"] as? [AnyObject] ?? []
             filteredLeagues = leagueArr

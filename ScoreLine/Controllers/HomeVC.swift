@@ -13,6 +13,7 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     
     //MARK: Outlets
     
+    @IBOutlet weak var viewNoLive: UIView!
     @IBOutlet weak var clcLiveFixtures: UICollectionView!
     
     @IBOutlet weak var viewTblHeader: UIView!
@@ -26,6 +27,7 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         liveMatchData()
         upcomingMatchData()
         // Do any additional setup after loading the view.
@@ -40,11 +42,26 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     }
     //MARK: Webservice methods
     func liveMatchData(){
-        let liveFixtureUrl = "https://v3.football.api-sports.io/fixtures?live=all"
-        let headers:HTTPHeaders = ["x-rapidapi-key" : "ef202dc7c88478fd5250d7c20a7d5f7c",
-                                   "x-rapidapi-host" : "v3.football.api-sports.io"]
+        let liveFixtureUrl = "https://\(apiHost)/fixtures?live=all"
+        let headers:HTTPHeaders = ["x-rapidapi-key" : api_key,
+                                   "x-rapidapi-host" : apiHost]
         callWebServiceToFetchJsonData(strURL: liveFixtureUrl,headers: headers){[self] response in
             livefixtureArr = response?["response"] as? [AnyObject] ?? []
+            let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.systemUltraThinMaterial)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = viewNoLive.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            blurEffectView.layer.masksToBounds = true
+            blurEffectView.layer.cornerRadius = 20
+            viewNoLive.insertSubview(blurEffectView, at: 0)
+            if livefixtureArr.count == 0 || livefixtureArr.isEmpty {
+                viewNoLive.isHidden = false
+                clcLiveFixtures.isHidden = true
+            }
+            else{
+                viewNoLive.isHidden = true
+                clcLiveFixtures.isHidden = false
+            }
             clcLiveFixtures.delegate = self
             clcLiveFixtures.dataSource = self
             clcLiveFixtures.reloadData()
@@ -52,13 +69,13 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
             livePageControl.currentPage = 0
             //            livePageControl.setCurrentPageIndicatorImage(UIImage(named: "football"), forPage: 0)
         }OnFail: { err in
-            err
+            print(err)
         }
     }
     func upcomingMatchData(){
-        let upcomingFixtureUrl = "https://v3.football.api-sports.io/fixtures?next=20"
-        let headers:HTTPHeaders = ["x-rapidapi-key" : "ef202dc7c88478fd5250d7c20a7d5f7c",
-                                   "x-rapidapi-host" : "v3.football.api-sports.io"]
+        let upcomingFixtureUrl = "https://\(apiHost)/fixtures?next=20"
+        let headers:HTTPHeaders = ["x-rapidapi-key" : api_key,
+                                   "x-rapidapi-host" : apiHost]
         callWebServiceToFetchJsonData(strURL: upcomingFixtureUrl,headers: headers){[self] response in
             upcomingfixtureArr = response?["response"] as? [AnyObject] ?? []
             
@@ -96,11 +113,10 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
         let teams = upcomingMatchData["teams"] as? AnyObject
         let homeTeam = teams?["home"] as? AnyObject
         let awayTeam = teams?["away"] as? AnyObject
-        let scores = upcomingMatchData["goals"] as? AnyObject
         cell.imgHome.sd_setImage(with: URL(string: homeTeam?["logo"] as? String ?? "" ))
         cell.imgAway.sd_setImage(with: URL(string: awayTeam?["logo"] as? String ?? "" ))
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.systemUltraThinMaterial)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = cell.viewBack.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -152,7 +168,7 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
         
         //MARK: Live Data cell design code
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.systemUltraThinMaterial)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = cell.viewBack.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

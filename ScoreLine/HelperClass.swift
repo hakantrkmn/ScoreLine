@@ -19,6 +19,13 @@ let deviceModel                     = UIDevice.current.name
 let deviceOSVersion                 = UIDevice.current.systemVersion
 let deviceType                      = UIDevice.current.systemName
 var appCode                         = ""
+var api_key                         = "ef202dc7c88478fd5250d7c20a7d5f7c"
+//"ef202dc7c88478fd5250d7c20a7d5f7c"
+//"1343dd95b0msh2a5acac6bba3512p129fc7jsn0c9b70762cd5"
+var apiHost                         = "v3.football.api-sports.io"
+//"v3.football.api-sports.io"
+//"api-football-v1.p.rapidapi.com"
+
 
 //var loginModel                      : Signup?
 //var hostSettings                    : HostClass?
@@ -33,6 +40,7 @@ var hostStoreID                     = ""
 var bearer_token                    = ""
 var wishlist_count                  = 0
 var cart_count                      = 0
+
 //MARK: ALERT MESSAGE :-
 enum AlertMsg: String {
     //MARK: Common error messages
@@ -1301,5 +1309,34 @@ extension UIAlertController {
     //Set tint color of UIAlertController
     func setTint(color: UIColor) {
         self.view.tintColor = color
+    }
+}
+extension UICollectionView {
+
+    func drawLineFrom(
+        from: IndexPath,
+        to: IndexPath,
+        lineWidth: CGFloat = 2,
+        strokeColor: UIColor = UIColor.darkGray
+    ) {
+        
+        let fromPoint = self.dequeueReusableCell(withReuseIdentifier: "eventCell", for: from) as? LiveMatchEventCell
+        let toPoint = self.dequeueReusableCell(withReuseIdentifier: "eventCell", for: to) as? LiveMatchEventCell
+
+        let path = UIBezierPath()
+
+        guard let fromCenter = fromPoint?.center else { return }
+        guard let toCenter = toPoint?.center else { return }
+
+        path.move(to: convert(fromCenter, to: self))
+        path.addLine(to: convert(toCenter, to: self))
+
+        let layer = CAShapeLayer()
+
+        layer.path = path.cgPath
+        layer.lineWidth = lineWidth
+        layer.strokeColor = strokeColor.cgColor
+
+        self.layer.insertSublayer(layer, at: 0)
     }
 }

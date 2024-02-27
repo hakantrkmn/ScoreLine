@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "Goal.png",
+      "filename" : "icons8-football-net-48.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icons8-football-net-96.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
