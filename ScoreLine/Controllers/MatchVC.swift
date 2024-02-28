@@ -102,7 +102,7 @@ class MatchVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIColl
                                    "x-rapidapi-host" : apiHost]
         
         callWebServiceToFetchJsonData(strURL: lineupUrl, headers: headers){[self] response in
-            var teamArr = response as? [AnyObject] ?? []
+            var teamArr = response?["response"] as? [AnyObject] ?? []
             if teamArr.count != 0 || !teamArr.isEmpty{
                 homeTeam = teamArr[0] as AnyObject
                 awayTeam = teamArr[1] as AnyObject
@@ -131,7 +131,7 @@ class MatchVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIColl
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if segDataControl.selectedSegmentIndex == 0{
             if section == 0{
-                if startingXIHomeArr?.count == 0 || ((startingXIHomeArr?.isEmpty) != nil){
+                if startingXIHomeArr?.count == 0{
                     return 1
                 }
                 else{
@@ -139,7 +139,7 @@ class MatchVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIColl
                 }
             }
             else {
-                if startingXIAwayArr?.count == 0 || ((startingXIAwayArr?.isEmpty) != nil){
+                if startingXIAwayArr?.count == 0{
                     return 1
                 }
                 else{
@@ -149,7 +149,7 @@ class MatchVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIColl
         }
         else if segDataControl.selectedSegmentIndex == 1{
             if section == 0{
-                if substituteHomeArr?.count == 0 || ((substituteHomeArr?.isEmpty) != nil){
+                if substituteHomeArr?.count == 0{
                     return 1
                 }
                 else{
@@ -157,7 +157,7 @@ class MatchVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIColl
                 }
             }
             else {
-                if substituteAwayArr?.count == 0 || ((substituteAwayArr?.isEmpty) != nil){
+                if substituteAwayArr?.count == 0{
                     return 1
                 }
                 else{
@@ -167,7 +167,7 @@ class MatchVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIColl
         }
         else{
             if section == 0{
-                if coachHomeArr?.count == 0 || ((coachHomeArr?.isEmpty) != nil){
+                if coachHomeArr?.count == 0{
                     return 1
                 }
                 else{
@@ -175,7 +175,7 @@ class MatchVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIColl
                 }
             }
             else {
-                if coachAwayArr?.count == 0 || ((coachAwayArr?.isEmpty) != nil){
+                if coachAwayArr?.count == 0{
                     return 1
                 }
                 else{
@@ -205,7 +205,7 @@ class MatchVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIColl
         if segDataControl.selectedSegmentIndex == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as! PlayerCell
             if indexPath.section == 0{
-                if startingXIHomeArr?.count == 0 || ((startingXIHomeArr?.isEmpty) != nil){
+                if startingXIHomeArr?.count == 0{
                     cell.lblPlayerName.text = "No data found"
                     cell.lblPlayerNo.text = ""
                 }
@@ -217,7 +217,7 @@ class MatchVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIColl
                 }
             }
             else{
-                if startingXIAwayArr?.count == 0 || ((startingXIAwayArr?.isEmpty) != nil){
+                if startingXIAwayArr?.count == 0{
                     cell.lblPlayerName.text = "No data found"
                     cell.lblPlayerNo.text = ""
                 }
@@ -233,7 +233,7 @@ class MatchVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIColl
         else if segDataControl.selectedSegmentIndex == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as! PlayerCell
             if indexPath.section == 0{
-                if substituteHomeArr?.count == 0 || ((substituteHomeArr?.isEmpty) != nil){
+                if substituteHomeArr?.count == 0{
                     cell.lblPlayerName.text = "No data found"
                     cell.lblPlayerNo.text = ""
                 }
@@ -245,7 +245,7 @@ class MatchVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIColl
                 }
             }
             else{
-                if substituteAwayArr?.count == 0 || ((substituteAwayArr?.isEmpty) != nil){
+                if substituteAwayArr?.count == 0{
                     cell.lblPlayerName.text = "No data found"
                     cell.lblPlayerNo.text = ""
                 }
@@ -261,7 +261,7 @@ class MatchVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIColl
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "coachCell", for: indexPath) as! CoachCell
             if indexPath.section == 0{
-                if coachHomeArr?.count == 0 || ((coachHomeArr?.isEmpty) != nil){
+                if coachHomeArr?.count == 0{
                     cell.lblCoachName.text = "No data found"
                     cell.imgCoach.image = UIImage(named: "bench")
                 }
@@ -272,7 +272,7 @@ class MatchVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIColl
                 }
             }
             else{
-                if coachAwayArr?.count == 0 || ((coachAwayArr?.isEmpty) != nil){
+                if coachAwayArr?.count == 0{
                     cell.lblCoachName.text = "No data found"
                     cell.imgCoach.image = UIImage(named: "bench")
                 }
@@ -292,7 +292,6 @@ class MatchVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath) as! LiveMatchEventCell
-        collectionView.drawLineFrom(from: indexPath, to: indexPath)
         let eventData = eventArr[indexPath.row]
         let timeData = eventData["time"] as? AnyObject
         cell.lblTime.text = "\(timeData?["elapsed"] as? Int ?? 0)'"
@@ -326,7 +325,12 @@ class MatchVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIColl
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 120, height: 155)
     }
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
     @IBAction func segmentControl(_ sender: Any) {
         tblTeamData.reloadData()
     }
