@@ -97,6 +97,7 @@ class MatchVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIColl
         }
     }
     func getLineUpData(){
+        /*
         let lineupUrl = "https://\(apiHost)/fixtures/lineups?fixture=\(matchData["id"] as? Int ?? 0)"
         let headers:HTTPHeaders = ["x-rapidapi-key" : api_key,
                                    "x-rapidapi-host" : apiHost]
@@ -126,63 +127,12 @@ class MatchVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIColl
         }OnFail: { err in
             print(err)
         }
+         */
     }
     //MARK: Tableview methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if segDataControl.selectedSegmentIndex == 0{
-            if section == 0{
-                if startingXIHomeArr?.count == 0{
-                    return 1
-                }
-                else{
-                    return startingXIHomeArr?.count ?? 0
-                }
-            }
-            else {
-                if startingXIAwayArr?.count == 0{
-                    return 1
-                }
-                else{
-                    return startingXIAwayArr?.count ?? 0
-                }
-            }
-        }
-        else if segDataControl.selectedSegmentIndex == 1{
-            if section == 0{
-                if substituteHomeArr?.count == 0{
-                    return 1
-                }
-                else{
-                    return substituteHomeArr?.count ?? 0
-                }
-            }
-            else {
-                if substituteAwayArr?.count == 0{
-                    return 1
-                }
-                else{
-                    return substituteAwayArr?.count ?? 0
-                }
-            }
-        }
-        else{
-            if section == 0{
-                if coachHomeArr?.count == 0{
-                    return 1
-                }
-                else{
-                    return coachHomeArr?.count ?? 0
-                }
-            }
-            else {
-                if coachAwayArr?.count == 0{
-                    return 1
-                }
-                else{
-                    return coachAwayArr?.count ?? 0
-                }
-            }
-        }
+        return 0
+        
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2

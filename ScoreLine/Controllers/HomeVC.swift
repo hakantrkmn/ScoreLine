@@ -27,7 +27,7 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+
         liveMatchData()
         upcomingMatchData()
         // Do any additional setup after loading the view.

@@ -22,20 +22,8 @@ class NewsVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
     //MARK: ViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        imgTop.clipsToBounds = true
-        imgTop.layer.cornerRadius = 20
-        imgTop.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.prominent)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = viewTop.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        blurEffectView.layer.masksToBounds = true
-        blurEffectView.layer.cornerRadius = 20
-        viewTop.insertSubview(blurEffectView, at: 0)
-        viewTop.clipsToBounds = true
-        viewTop.layer.cornerRadius = 20
-        viewTop.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        self.navigationItem.title = "News"
+
         getNews()
         // Do any additional setup after loading the view.
     }
