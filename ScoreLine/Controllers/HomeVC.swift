@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SDWebImage
+import AppTrackingTransparency
 class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,UITableViewDelegate,UITableViewDataSource{
     
     
@@ -27,7 +28,14 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if #available(iOS 14, *) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1 ){
+                ATTrackingManager.requestTrackingAuthorization { (status) in
+                  //print("IDFA STATUS: \(status.rawValue)")
+                }
+            }
+          
+        }
         liveMatchData()
         upcomingMatchData()
         // Do any additional setup after loading the view.
@@ -67,6 +75,7 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
             clcLiveFixtures.reloadData()
             livePageControl.numberOfPages = livefixtureArr.count
             livePageControl.currentPage = 0
+            
             //            livePageControl.setCurrentPageIndicatorImage(UIImage(named: "football"), forPage: 0)
         }OnFail: { err in
             print(err)
@@ -78,12 +87,12 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
                                    "x-rapidapi-host" : apiHost]
         callWebServiceToFetchJsonData(strURL: upcomingFixtureUrl,headers: headers){[self] response in
             upcomingfixtureArr = response?["response"] as? [AnyObject] ?? []
-            
+            dump(upcomingfixtureArr)
             tblUpcomingFixtures.delegate = self
             tblUpcomingFixtures.dataSource = self
             tblUpcomingFixtures.tableHeaderView = viewTblHeader
             tblUpcomingFixtures.reloadData()
-            
+            print(upcomingFixtureUrl)
         }OnFail: { err in
             print(err)
         }
